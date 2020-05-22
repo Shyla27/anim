@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/nav_dash"
+        android:icon="@drawable/ic_dashboard"
+        android:title="Dashboard" />
+
+    <item
+        android:id="@+id/nav_favourite"
+        android:icon="@drawable/ic_heart"
+        android:title="Favourite" />
+
+    <item
+        android:id="@+id/nav_downloads"
+        android:icon="@drawable/ic_download"
+        android:title="Downloads" />
+
+    <item
+        android:id="@+id/nav_bookmark"
+        android:icon="@drawable/ic_bookmark"
+        android:title="Bookmarks" />
+
+</menu>

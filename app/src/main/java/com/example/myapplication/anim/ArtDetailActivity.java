@@ -1,0 +1,40 @@
+package com.example.myapplication.anim;
+
+import android.os.Bundle;
+
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.viewpager.widget.ViewPager;
+
+import com.example.myapplication.anim.adapters.ArtPagerAdapter;
+import com.example.myapplication.anim.models.Artsy;
+
+import org.parceler.Parcels;
+
+import java.util.ArrayList;
+
+import butterknife.BindView;
+import butterknife.ButterKnife;
+
+public class ArtDetailActivity extends AppCompatActivity {
+
+    @BindView(R.id.viewPager)
+    ViewPager mViewPager;
+    private ArtPagerAdapter adapterViewPager;
+    ArrayList<Artsy> mArtsies = new ArrayList<>();
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_art_detail);
+        ButterKnife.bind(this);
+
+        mArtsies = Parcels.unwrap(getIntent().getParcelableExtra("restaurants"));
+        int startingPosition = getIntent().getIntExtra("position", 0);
+
+        adapterViewPager = new ArtPagerAdapter(getSupportFragmentManager(), mArtsies);
+        mViewPager.setAdapter(adapterViewPager);
+        mViewPager.setCurrentItem(startingPosition);
+    }
+}
+
